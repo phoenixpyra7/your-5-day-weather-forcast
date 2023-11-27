@@ -7,36 +7,38 @@
     <title>Document</title>
     <script src="./assets/javascript/script.js" defer></script>
 </head>
-<button class="btn btn-primary" id="fetch-button">Get Weather Forcast</button>
-<button class="btn btn-secondary"id="clear-button">Clear Form</button>
+
 <body>
     <main class="container-fluid bg-dark text-light min-vh-100">
         <div class="row">
-          <div class="col col-md-4">
-            <div class="p-3">
-              <h2>Your 5 Day Weather Forcast</h2>
-              <form id="loc-search">
-                <div class="mb-3">
-                  <input type="text" placeholder="Search!" class="form-control" id="q" name="q">
+            <div class="col col-md-4">
+                <div class="p-3">
+                    <h2>Your 5 Day Weather Forcast</h2>
+                    <form id="loc-search">
+                        <div class="mb-3">
+                            <input type="text" placeholder="Search!" class="form-control" id="q" name="q">
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" id="format" name="format">
+                                <option value="" selected disabled>Select a State</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary" id="fetch-button">Get Weather Forcast</button>
+                        <button class="btn btn-secondary" id="clear-button">Clear Form</button>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                  <select class="form-select" id="format" name="format">
-                    <option value="" selected disabled>Select a State</option>
-                  </select>
+            </div>
+            <div class="col col-md-8">
+                <div class="p-3">
+                    <h2>Search results for: <span id="term"></span></h2>
+                    <div class="results"></div>
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
-              </form>
             </div>
-          </div>
-          <div class="col col-md-8">
-            <div class="p-3">
-              <h2>Search results for: <span id="term"></span></h2>
-              <div class="results"></div>
-            </div>
-          </div>
         </div>
-      </main>
-<!-- <form>
+    </main>
+    <!-- <form>
  example:
 <form method="GET" action="junk.cgi">
   <input type=text name="birthyear">
