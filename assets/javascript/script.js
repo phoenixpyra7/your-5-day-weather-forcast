@@ -21,5 +21,14 @@ var clearButton = document.getElementById("clear-button");
 //             var city = document.getElementsByClassName("");
 //             var stateCode = document.getElementsByClassName("");
 //             weatherContainer.append(city, stateCode)
-//             //         //Do something with the data here
-//         });
+//          
+//Do something with the data here
+//});
+
+function clear() {
+
+}
+
+fetchButton.addEventListener("click", getApi);
+clearButton.addEventListener("click", clear);
+// fetchButton.addEventListener("click", getApi);
