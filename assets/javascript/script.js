@@ -2,8 +2,8 @@
 var APIKey = "45943224f1c4d4f4cace2f1863924b15";
 var city;
 var stateCode;
-var queryURL = "https://home.openweathermap.org/api_keys"
-
+var queryURL = "https://home.openweathermap.org/api_keys";
+var clearButton = document.getElementById("clear-button");
 
 
 
