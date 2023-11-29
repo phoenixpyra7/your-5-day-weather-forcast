@@ -4,29 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./assets/javascript/script.js" defer></script>
+    <script src="./assets/css/stylesheet.css"></script>
+    <title>your-5-day-weather-forcast</title>
 </head>
 
 <body>
     <main class="container-fluid bg-dark text-light min-vh-100">
         <div class="row">
-            <div class="col col-md-4">
+            <div class="col col-md-3">
                 <div class="p-3">
                     <h2>Your 5 Day Weather Forcast</h2>
                     <form id="loc-search">
                         <div class="mb-3">
-                            <input type="text" placeholder="Search!" class="form-control" id="q" name="q">
+                            <!-- made the background text say city so that user will fill in with city name-->
+                            <input type="text" placeholder="City" class="form-control" id="q" name="q">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3"> <!--what is mb margin bottom??-->
                             <select class="form-select" id="format" name="format">
-                                <option value="" selected disabled>Select a State</option>
+                                <option value="" selected disabled>State</option>
                             </select>
                         </div>
-
                         <button class="btn btn-primary" id="fetch-button">Get Weather Forcast</button>
+                        <br>
+                        <br>
                         <button class="btn btn-secondary" id="clear-button">Clear Form</button>
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <!-- <button type="submit" class="btn btn-primary">Search</button> -->
                     </form>
                 </div>
             </div>
@@ -47,6 +49,7 @@
     <request>
         <!--put the curl here? in a request/response body found on this page https://curl.se/docs/httpscripting.html-->
     </request>
+    <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
