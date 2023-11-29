@@ -5,7 +5,7 @@ var stateCode;
 var queryURL = "https://home.openweathermap.org/api_keys";
 var clearButton = document.getElementById("clear-button");
 var weatherContainer;
-var = "#loc-search"; //made an id and that aint working
+// var = "#loc-search"; //made an id and that aint working
 
 // api for geo location
 function getGeoWeather() {

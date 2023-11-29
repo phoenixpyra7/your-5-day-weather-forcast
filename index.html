@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <main class="container-fluid bg-dark text-light min-vh-100">
+    <h1>Weather Dashboard</h1>
+    <main class="container-fluid"> <!-- bg-dark text-light min-vh-100 -->
         <div class="row">
-            <div class="col col-md-3">
-                <div class="p-3">
-                    <h2>Your 5 Day Weather Forcast</h2>
+            <div class="col col-md-4">
+                    <h2>Search for a location</h2>
                     <form id="loc-search">
                         <div class="mb-3">
                             <!-- made the background text say city so that user will fill in with city name-->
@@ -24,6 +24,7 @@
                                 <option value="" selected disabled>State</option>
                             </select>
                         </div>
+
                         <button class="btn btn-primary" id="fetch-button">Get Weather Forcast</button>
                         <br>
                         <br>
@@ -32,9 +33,11 @@
                     </form>
                 </div>
             </div>
+
+
             <div class="col col-md-8">
                 <div class="p-3">
-                    <h2>Search results for: <span id="term"></span></h2>
+                    <h2>5-Day Forcast <span id="term"></span></h2>
                     <div class="results"></div>
                 </div>
             </div>
