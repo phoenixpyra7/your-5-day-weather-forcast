@@ -6,7 +6,7 @@ var queryURL = "https://home.openweathermap.org/api_keys";
 var clearButton = document.getElementById("clear-button");
 var weatherContainer;
 
-
+// api for geo location
 function getGeoWeather() {
     fetch("http://api.openweathermap.org/data/2.5/forecast?appid=45943224f1c4d4f4cace2f1863924b15&lat=" + lat + "&lon=" + lon + "&units=imperial")
     .then(function (response) {
@@ -16,9 +16,7 @@ function getGeoWeather() {
         console.log(data);
     })
 };
-
-// http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
-// 45943224f1c4d4f4cace2f1863924b15
+// api for weather
 function getCityGeoData(city) {
     fetch("http://api.openweathermap.org/geo/1.0/direct?appid=45943224f1c4d4f4cace2f1863924b15&limit=1&q=" + city)
         .then(function (response) {
@@ -32,8 +30,7 @@ function getCityGeoData(city) {
 
 getCityGeoData();
 
-// https://home.openweathermap.org/api_keys/45943224f1c4d4f4cace2f1863924b15
-// http://api.openweathermap.org/geo/1.0/zip?zip={zip code},{country code}&appid={API key}
+
 
 function weatherSearch(event) {
     event.preventDefaul();
@@ -62,6 +59,7 @@ function weatherSearch(event) {
 //     weatherContainer.innerHTML = null; //make sure class in html or move
 // }
 
-// fetchButton.addEventListener("click", getApi); //why get api not green
-// clearButton.addEventListener("click", clear);
-// fetchButton.addEventListener("click", getApi);
+//why is my get api not green
+fetchButton.addEventListener("click", getApi); 
+clearButton.addEventListener("click", clear);
+fetchButton.addEventListener("click", getApi);
