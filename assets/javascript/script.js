@@ -1,31 +1,40 @@
 
 var APIKey = "45943224f1c4d4f4cace2f1863924b15";
-var city;
+var city = "Chicago";
 var stateCode;
 var queryURL = "https://home.openweathermap.org/api_keys";
 var clearButton = document.getElementById("clear-button");
+var results = document.querySelector(".results");
 var weatherContainer;
 // var = "#loc-search"; //made an id and that aint working
 
 // api for geo location
-function getGeoWeather() {
-    fetch("http://api.openweathermap.org/data/2.5/forecast?appid=45943224f1c4d4f4cace2f1863924b15&lat=" + lat + "&lon=" + lon + "&units=imperial")
+function getGeoWeather(lat,lon) {
+    fetch("https://api.openweathermap.org/data/2.5/forecast?appid=45943224f1c4d4f4cace2f1863924b15&lat=" + lat + "&lon=" + lon + "&units=imperial")
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
         console.log(data);
+        console.log(data.list[0].main.temp);
+        var todaysWeather = data.list[0].main.temp;
+        var todaysWeatherP = document.createElement("p");
+        todaysWeatherP.textContent = todaysWeather
+        // append to the results
     })
 };
 // api for weather
 function getCityGeoData(city) {
-    fetch("http://api.openweathermap.org/geo/1.0/direct?appid=45943224f1c4d4f4cace2f1863924b15&limit=1&q=" + city)
+    var city = "Chicago";
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=45943224f1c4d4f4cace2f1863924b15")
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
-            getGeoWeather(data[0].lat, data[0].lon);
+            var lat = data[0].lat;
+            var lon = data[0].lon;
+            getGeoWeather(lat, lon);
         })
 }
 
