@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./assets/css/stylesheet.css"></script>
     <title>your-5-day-weather-forcast</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Your 5-Day Weather Forcast Dashboard</h1>
-    <main class="container-fluid"> <!-- bg-dark text-light min-vh-100 -->
+    <h1 class="header">Your 5-Day Weather Forcast Dashboard </h1>
+    <main class="container-sm"> <!-- small container for better looks-->
         <div class="row">
             <div class="col col-md-4">
-                <h2>Search for a location</h2>
+                <h2>Search by location</h2>
                 <form id="loc-search">
                     <div class="mb-3">
                         <!-- made the background text say city so that user will fill in with city name-->
                         <input type="text" placeholder="City" class="form-control" id="q" name="q">
                     </div>
-                    <div class="mb-3"> <!--what is mb margin bottom??-->
+                    <div class="mb-3">
                         <!-- <select class="form-select" id="format" name="format">
                             <option value="" selected disabled>State</option>
                         </select> -->
@@ -38,10 +39,11 @@
 
         <div class="col col-md-8"><!--not sure about this section-->
             <div class="p-3">
-                <h2>5-Day Forcast <span id="term"></span></h2>
-                <div class="results"></div>
+                <h2>5-Day Forcast</h2> <!-- took out span  <span id="term"></span> -->
+                <div class="results">
+                    <p>WHERE AM I</p>
+                </div>
             </div>
-        </div>
         </div>
     </main>
     <!-- <form>
