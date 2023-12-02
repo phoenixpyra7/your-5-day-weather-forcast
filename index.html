@@ -11,25 +11,32 @@
 </head>
 
 <body>
-    <h1 class="header">Your 5-Day Weather Forcast Dashboard </h1>
+    <style>
+
+
+
+    </style>
+
+    <header>
+        <h1>Your 5-Day Weather Forcast Dashboard </h1>
+    </header>
+
     <main class="container-sm"> <!-- small container for better looks-->
         <div class="row">
             <div class="col col-md-4">
                 <h2>Search by location</h2>
-                <form id="loc-search">
+
+                <form>
                     <div class="mb-3">
                         <!-- made the background text say city so that user will fill in with city name-->
-                        <input type="text" placeholder="City" class="form-control" id="q" name="q">
+                        <input type="text" placeholder="City" class="form-control" id="q" name="q"> 
+                        <button class="btn btn-primary" id="fetch-button">Get Weather Forcast</button>
                     </div>
                     <div class="mb-3">
-                        <!-- <select class="form-select" id="format" name="format">
-                            <option value="" selected disabled>State</option>
-                        </select> -->
+                    
                     </div>
 
-                    <button class="btn btn-primary" id="fetch-button">Get Weather Forcast</button>
-                    <br>
-                    <br>
+                
                     <button class="btn btn-secondary" id="clear-button">Clear Form</button>
                     <!-- <button type="submit" class="btn btn-primary">Search</button> -->
                 </form>
