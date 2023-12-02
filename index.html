@@ -25,43 +25,36 @@
         <div class="row">
             <div class="col col-md-4">
                 <h2>Search by location</h2>
-
+                <br>
                 <form>
                     <div class="mb-3">
                         <!-- made the background text say city so that user will fill in with city name-->
-                        <input type="text" placeholder="City" class="form-control" id="q" name="q"> 
+                        <input type="text" placeholder="City" class="form-control" id="q" name="q">
+                        <br>
                         <button class="btn btn-primary" id="fetch-button">Get Weather Forcast</button>
-                    </div>
-                    <div class="mb-3">
-                    
-                    </div>
-
-                
-                    <button class="btn btn-secondary" id="clear-button">Clear Form</button>
-                    <!-- <button type="submit" class="btn btn-primary">Search</button> -->
+                        <button class="btn btn-secondary" id="clear-button">Clear Form</button>
+                        <!-- <added search button and clear button -->
+                    </div> <!--if i remv ths i can get results on right side-->
                 </form>
             </div>
         </div>
 
-
-        <div class="col col-md-8"><!--not sure about this section-->
-            <div class="p-3">
-                <h2>5-Day Forcast</h2> <!-- took out span  <span id="term"></span> -->
-                <div class="results">
-                    <p>WHERE AM I</p>
-                </div>
+        <!-- for now this is my results section-->
+        <!-- <div class="p-3"> -->
+        <h2>5-Day Forcast</h2> <!-- took out span  <span id="term"></span> -->
+        <div class="results">
+            <div class="card">
+                <div class="todays-date"></div>
+                <input placeholder="results" class="form-control" >
             </div>
         </div>
+        </div>
+        <div class="col col-md-8">
+
+
+
     </main>
-    <!-- <form>
- example:
-<form method="GET" action="junk.cgi">
-  <input type=text name="birthyear">
-  <input type=submit name=press value="OK">
-</form> -->
-    <request>
-        <!--put the curl here? in a request/response body found on this page https://curl.se/docs/httpscripting.html-->
-    </request>
+
     <script src="./assets/javascript/script.js"></script>
 </body>
 
