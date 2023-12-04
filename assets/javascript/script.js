@@ -18,12 +18,12 @@ function getGeoWeather(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            // console.log(data);
             var arr = data.list;
             // console.log(data.list[0].main.temp);
-            for (let i = 0; i < arr.length; i+=8) {
-                //cannot remember why a back tic, may also want change name back to card
-                var fiveDayWeathercard = ` 
+            for (let i = 0; i < arr.length; i += 8) {
+                //cannot remember why a back tic
+                var card = `
                 <div class="card m-1 p-3">
                 <p class="current-date">${dayjs(data.list[i].dt_txt).format('M/D/YYYY')}</p>
                 <img src="${imageUrl}${arr[i].weather[0].icon}.png" alt="one of many possible icons of the weather">
@@ -31,7 +31,7 @@ function getGeoWeather(lat, lon) {
                 <p class="wind">Wind: ${arr[i].wind.speed}</p>
                 <p class="humidity">Humidity: ${arr[i].main.temp}</p>
                 </div>
-                ` //cannot remember why a back tic
+                ` //back tick is to denote this template, giving error!?!?!?!?
                 var dataHtml = document.createElement("div");
                 dataHtml.innerHTML = card;
                 fiveDayWeather.appendChild(dataHtml);
@@ -54,7 +54,7 @@ function getCityGeoData(city) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            // console.log(data);
             var lat = data[0].lat;
             var lon = data[0].lon;
             getGeoWeather(lat, lon);
@@ -67,6 +67,9 @@ function getCityGeoData(city) {
 // }
 // getCityGeoData();
 // this code stopped the temp from appearing on the page
+function saveForecastToLocalStorage(cityName, data) {
+    localStorage.setItem(`${cityName}-forecast`, JSON.stringify(data));
+}
 
 fetchButton.addEventListener("click", function (event) {
     event.preventDefault();
