@@ -7,7 +7,8 @@ var fetchButton = document.getElementById("fetch-button");
 var results = document.querySelector(".results");
 var weatherContainer;
 var qInput = document.querySelector("#q");
-
+var fiveDayWeather = document.querySelector(".five-day-weather");
+var imageUrl = "https://openweathermap.org/img/w/";
 
 // api for the geo location
 function getGeoWeather(lat, lon) {
@@ -17,11 +18,28 @@ function getGeoWeather(lat, lon) {
         })
         .then(function (data) {
             console.log(data);
-            console.log(data.list[0].main.temp);
-            var todaysWeather = data.list[0].main.temp;
-            var todaysWeatherP = document.createElement("p");
-            todaysWeatherP.textContent = todaysWeather;
-            results.appendChild(todaysWeatherP);
+            var arr = data.list;
+            // console.log(data.list[0].main.temp);
+            for (let i = 0; i < arr.length; i+=8) {
+                var card = `
+                <div class="card m-1 p-3">
+                <p class="current-date"></p>
+                <img src="${imageUrl}${arr[i].weather[0].icon}.png" alt="">
+                <p class="temperature">Temp:${arr[i].main.temp}</p>
+                <p class="wind">Wind: ${arr[i].wind.speed}</p>
+                <p class="humidity">Humidity: ${arr[i].main.temp}</p>
+                </div>
+                `
+                var dataHtml = document.createElement("div");
+                dataHtml.innerHTML = card;
+                fiveDayWeather.appendChild(dataHtml);
+                console.log(arr[i]);
+            }
+
+            // var todaysWeather = data.list[0].main.temp;
+            // var todaysWeatherP = document.createElement("p");
+            // todaysWeatherP.textContent = todaysWeather;
+            // //results.appendChild(todaysWeatherP);
             // add more then the temp to this section
         })
 };
@@ -34,7 +52,7 @@ function getCityGeoData(city) {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
+            console.log(data);
             var lat = data[0].lat;
             var lon = data[0].lon;
             getGeoWeather(lat, lon);
