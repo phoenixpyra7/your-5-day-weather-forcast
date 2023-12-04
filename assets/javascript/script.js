@@ -8,7 +8,7 @@ var results = document.querySelector(".results");
 var weatherContainer;
 var qInput = document.querySelector("#q");
 var fiveDayWeather = document.querySelector(".five-day-weather");
-var today = document.querySelector(".today")
+var currentDate = document.querySelector(".current-date")
 var imageUrl = "https://openweathermap.org/img/w/";
 
 // api for the geo location
@@ -22,15 +22,16 @@ function getGeoWeather(lat, lon) {
             var arr = data.list;
             // console.log(data.list[0].main.temp);
             for (let i = 0; i < arr.length; i+=8) {
-                var card = `
+                //cannot remember why a back tic, may also want change name back to card
+                var fiveDayWeathercard = ` 
                 <div class="card m-1 p-3">
-                <p class="current-date"></p>
-                <img src="${imageUrl}${arr[i].weather[0].icon}.png" alt="">
+                <p class="current-date">${dayjs(data.list[i].dt_txt).format('M/D/YYYY')}</p>
+                <img src="${imageUrl}${arr[i].weather[0].icon}.png" alt="one of many possible icons of the weather">
                 <p class="temperature">Temp:${arr[i].main.temp}</p>
                 <p class="wind">Wind: ${arr[i].wind.speed}</p>
                 <p class="humidity">Humidity: ${arr[i].main.temp}</p>
                 </div>
-                `
+                ` //cannot remember why a back tic
                 var dataHtml = document.createElement("div");
                 dataHtml.innerHTML = card;
                 fiveDayWeather.appendChild(dataHtml);
