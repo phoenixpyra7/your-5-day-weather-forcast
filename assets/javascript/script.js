@@ -8,6 +8,7 @@ var results = document.querySelector(".results");
 var weatherContainer;
 var qInput = document.querySelector("#q");
 var fiveDayWeather = document.querySelector(".five-day-weather");
+var today = document.querySelector(".today")
 var imageUrl = "https://openweathermap.org/img/w/";
 
 // api for the geo location

@@ -20,6 +20,7 @@
             display: flex;
             justify-content: center;
         }
+
         h2 {
             padding: 20px;
         }
@@ -27,7 +28,6 @@
         .card {
             width: 18rem;
         }
-
     </style>
 
     <header>
@@ -55,14 +55,17 @@
         <!-- for now this is my results section-->
         <!-- <div class="p-3"> -->
         <h2>5-Day Forcast</h2> <!-- took out span  <span id="term"></span> -->
-        <div class="results">
-            <div class="card">
-                <div class="todays-date"></div>
-                <input placeholder="results" class="form-control">
-            </div>
-        </div>
 
-        <div class="col col-md-8 five-day-weather">
+        <!-- <div class="card"> -->
+        <!-- <div class="results"></div> -->
+        <div class="row">
+            <div class="col col-md-8 today"></div>
+
+            <div class="todays-date"></div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8 five-day-weather"></div>
             <!-- i watnt the date to appear in each card-->
             <!-- <div class="card m-1 p-3">
                 <p class="current-date"></p>
