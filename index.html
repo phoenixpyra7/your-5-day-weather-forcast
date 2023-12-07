@@ -24,11 +24,6 @@
         h2 {
             padding: 20px;
         }
-/* come back to put the cards side by side */
-        .card {
-            width: 18rem;
-            display: flex;
-        }
     </style>
 
     <header>
@@ -37,7 +32,7 @@
 
     <main class="container-sm"> <!-- small container for better looks-->
         <div class="row">
-            <div class="col col-md-4">
+            <div class="col-12 col-md-4">
                 <h2>Search by location</h2>
                 <br>
                 <form>
@@ -51,37 +46,19 @@
                     </div> <!--if i remv ths i can get results on right side-->
                 </form>
             </div>
-        </div>
-
-        <!-- for now this is my results section-->
-        <!-- <div class="p-3"> -->
-        <h2>5-Day Forcast</h2> <!-- took out span  <span id="term"></span> -->
-
-        <!-- <div class="card"> -->
-        <!-- <div class="results"></div> -->
-        <div class="row">
-            <div class="col col-md-8 today"></div>
-
-            <div class="current-date"></div>
-        </div>
-        </div>
-        <div class="row">
-            <div class="col col-md-8 five-day-weather"></div>
-            <!-- i watnt the date to appear in each card-->
-            <!-- <div class="card m-1 p-3">
-                <p class="current-date"></p>
-                <img src="" alt="">
-                <p class="temperature"></p>
-                <p class="wind"></p>
-                <p class="humidity"></p>
-            </div> -->
-            <!-- <div class="card2 m-1 p-3"></div>
-            <div class="card3 m-1 p-3"></div>
-            <div class="card4 m-1 p-3"></div>
-            <div class="card5 m-1 p-3"></div> -->
+            <div class="col-12 col-md-8">
+                <!-- for now this is my results section-->
+                <!-- <div class="p-3"> -->
+                <h2><span id="city"></span> 5-Day Forcast</h2> <!-- took out span  <span id="term"></span> -->
+                <div class="row">
+                    <div class="col-12 today"></div>
+                </div>
+                <div class="row five-day-weather">
+                </div>
+            </div>
         </div>
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="./assets/javascript/script.js"></script>
 </body>
 

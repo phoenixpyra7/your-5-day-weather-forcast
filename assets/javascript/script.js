@@ -8,11 +8,12 @@ var results = document.querySelector(".results");
 var weatherContainer;
 var qInput = document.querySelector("#q");
 var fiveDayWeather = document.querySelector(".five-day-weather");
+var cityEl = document.querySelector("#city");
 var currentDate = document.querySelector(".current-date");
 var imageUrl = "https://openweathermap.org/img/w/";
 
 // api for the geo location
-function getGeoWeather(lat, lon) {
+function getGeoWeather(lat, lon, city) {
     fetch("https://api.openweathermap.org/data/2.5/forecast?appid=45943224f1c4d4f4cace2f1863924b15&lat=" + lat + "&lon=" + lon + "&units=imperial")
         .then(function (response) {
             return response.json();
@@ -20,23 +21,31 @@ function getGeoWeather(lat, lon) {
         .then(function (data) {
             // console.log(data);
             var arr = data.list;
+
+            var html = "";
+
+            cityEl.textContent = city;
+
+            fiveDayWeather.innerHTML = html;
+
             // console.log(data.list[0].main.temp);
             for (let i = 0; i < arr.length; i += 8) {
                 //cannot remember why a back tic
                 var card = `
+                <div class="col-12 col-md">
                 <div class="card m-1 p-3">
                 <p class="current-date">${dayjs(data.list[i].dt_txt).format('M/D/YYYY')}</p>
-                <img src="${imageUrl}${arr[i].weather[0].icon}.png" alt="one of many possible icons of the weather">
+                <img width="100px" src="${imageUrl}${arr[i].weather[0].icon}.png" alt="one of many possible icons of the weather">
                 <p class="temperature">Temp:${arr[i].main.temp}</p>
                 <p class="wind">Wind: ${arr[i].wind.speed}</p>
                 <p class="humidity">Humidity: ${arr[i].main.temp}</p>
+                </div> 
                 </div>
-                ` //back tick is to denote this template, giving error!?!?!?!?
-                var dataHtml = document.createElement("div");
-                dataHtml.innerHTML = card;
-                fiveDayWeather.appendChild(dataHtml);
-                console.log(arr[i]);
+                `; //back tick is to denote this template, giving error!?!?!?!?
+                html += card;
             }
+
+            fiveDayWeather.innerHTML = html;
 
             // var todaysWeather = data.list[0].main.temp;
             // var todaysWeatherP = document.createElement("p");
@@ -54,10 +63,10 @@ function getCityGeoData(city) {
             return response.json();
         })
         .then(function (data) {
-            // console.log(data);
+            console.log(data);
             var lat = data[0].lat;
             var lon = data[0].lon;
-            getGeoWeather(lat, lon);
+            getGeoWeather(lat, lon, data[0].name);
             localStorage.setItem(city, data);
         })
 }
