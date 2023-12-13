@@ -12,3 +12,8 @@ This is a simple 5-Day Weather Forcast, where the user can search by city and co
 ## Link 
 
 Live URL: https://phoenixpyra7.github.io/your-5-day-weather-forcast/ 
+
+## Sources
+
+
+weather API information from Open Weather Map  : https://openweathermap.org/api 
