@@ -16,4 +16,4 @@ Live URL: https://phoenixpyra7.github.io/your-5-day-weather-forcast/
 ## Sources
 
 
-weather API information from Open Weather Map  : https://openweathermap.org/api 
+Weather API information sourced from Open Weather Map: https://openweathermap.org/api 
